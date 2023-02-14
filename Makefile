@@ -14,7 +14,7 @@ deploy:
 	rm -rf dist/*
 	yarn build
 	python setup.py sdist bdist_wheel
-	python -m twine upload dist/*
+	python -m twine upload -r fourdigits dist/*
 
 patch:
 	npm version patch
