@@ -1,14 +1,12 @@
 from django.db import models
 from django.utils.translation import gettext_lazy
-from wagtail.core.fields import StreamField
-from wagtail.core.models import Page
-from wagtail.admin.edit_handlers import StreamFieldPanel
-from wagtail.admin.edit_handlers import TabbedInterface, ObjectList
+from wagtail.admin.panels import FieldPanel, ObjectList, TabbedInterface
+from wagtail.fields import StreamField
+from wagtail.models import Page
 
 from wagtailyoast.edit_handlers import YoastPanel
 
-from .blocks import TextBlock, ImageBlock
-
+from .blocks import ImageBlock, TextBlock
 
 # =================================
 # TestPage used for testing purpose
@@ -24,7 +22,7 @@ class TestPage(Page):
 
     edit_handler = TabbedInterface([
         ObjectList(
-            Page.content_panels + [StreamFieldPanel('body')],
+            Page.content_panels + [FieldPanel('body')],
             heading=gettext_lazy('Content')
         ),
         ObjectList(Page.promote_panels, heading=gettext_lazy('Promotion')),

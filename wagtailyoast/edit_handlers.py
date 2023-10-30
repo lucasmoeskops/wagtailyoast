@@ -1,7 +1,5 @@
 from django import forms
-from wagtail.admin.edit_handlers import ObjectList
-from wagtail.admin.edit_handlers import FieldPanel, MultiFieldPanel
-from wagtail.admin.panels import PanelGroup
+from wagtail.admin.panels import PanelGroup, ObjectList, MultiFieldPanel, FieldPanel
 
 
 class YoastPanel(ObjectList):

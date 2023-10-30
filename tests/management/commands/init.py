@@ -1,13 +1,14 @@
 import json
-from django.contrib.auth.models import Group, User
-from django.core.management.base import BaseCommand
-from django.contrib.contenttypes.models import ContentType
-from wagtail.core.models import Page, Site
-from wagtail.images.models import Image
 
-from tests.models import TestPage
-from tests.blocks import TextBlock, ImageBlock
+from django.contrib.auth.models import Group, User
+from django.contrib.contenttypes.models import ContentType
+from django.core.management.base import BaseCommand
+from wagtail.images.models import Image
+from wagtail.models import Page, Site
+
 from tests import constants
+from tests.blocks import ImageBlock, TextBlock
+from tests.models import TestPage
 
 
 class Command(BaseCommand):
