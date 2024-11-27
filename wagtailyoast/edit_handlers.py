@@ -23,6 +23,7 @@ class YoastPanel(ObjectList):
         self.title_field = title
         self.search_description = search_description
         self.slug = slug
+        self.keywords_field = keywords
 
         children = [
             MultiFieldPanel([
@@ -39,4 +40,5 @@ class YoastPanel(ObjectList):
         kwargs['title'] = self.title_field
         kwargs['search_description'] = self.search_description
         kwargs['slug'] = self.slug
+        kwargs['keywords'] = self.keywords_field
         return kwargs
